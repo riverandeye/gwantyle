@@ -1,11 +1,12 @@
 import styled from "styled-components/macro";
+import { BREAKPOINT } from "../../constant";
 
-export const Layout = styled.div`
-  width: 100%;
-  height: 100%;
-`;
+export const Layout = styled.div``;
 
 export const LayoutContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  padding-top: 16.5rem;
+
+  @media only screen and (min-width: ${BREAKPOINT}px) {
+    padding-top: 22rem;
+  }
 `;
