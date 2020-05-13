@@ -6,7 +6,7 @@ import { CATEGORIES } from '../../constant';
 
 interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ({}) => {
+const Header: React.FC<HeaderProps> = () => {
   const [genderState, setGenderState] = useState(true);
   const [categoryState, setCategoryState] = useState(0);
 

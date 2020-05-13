@@ -4,7 +4,6 @@ import { THEME, BREAKPOINT } from '../../constant';
 interface ActiveProps {
   active?: boolean;
 }
-// z-index: ${(props) => (props.active ? 100 : 50)};
 
 export const Main = styled.div`
   display: flex;

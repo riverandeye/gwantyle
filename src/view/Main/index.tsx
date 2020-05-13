@@ -6,7 +6,7 @@ import FilterIcon from '../../svgs/filter-icon';
 
 interface MainProps {}
 
-const Main: React.FC<MainProps> = ({}) => {
+const Main: React.FC<MainProps> = () => {
   const [category, setCategory] = useState(true);
   const toggleCategory = () => {
     setCategory(!category);
@@ -35,22 +35,6 @@ const Main: React.FC<MainProps> = ({}) => {
             </S.FilterButton>
           </S.FilterColumnContainer>
         </S.FilterContainer>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
-        <div>ㅇㄴ</div>
       </S.MainContainer>
     </S.Main>
   );
