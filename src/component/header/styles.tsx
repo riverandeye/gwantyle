@@ -17,7 +17,7 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: ${THEME.MOBILE_HEADER};
+  background-color: ${THEME.THEME_ORANGE};
   height: 5.5rem;
 
   @media only screen and (min-width: ${BREAKPOINT}px) {
@@ -92,7 +92,7 @@ export const MobileGenderToggle = styled.div`
 
   height: 3rem;
 
-  background-color: ${THEME.MOBILE_HEADER};
+  background-color: ${THEME.THEME_ORANGE};
   border: 1px solid white;
   border-radius: 1.5rem;
 `;
@@ -113,8 +113,8 @@ export const MobileGenderButton = styled.div<ActiveProps>`
   border: none;
   border-radius: 1.5rem;
 
-  background-color: ${(props) => (props.active ? 'white' : THEME.MOBILE_HEADER)};
-  color: ${(props) => (props.active ? THEME.MOBILE_HEADER : 'white')};
+  background-color: ${(props) => (props.active ? 'white' : THEME.THEME_ORANGE)};
+  color: ${(props) => (props.active ? THEME.THEME_ORANGE : 'white')};
 `;
 
 export const SecondRowContainer = styled.div`
@@ -134,7 +134,7 @@ export const MobileCategoryButton = styled.div<ActiveProps>`
 
   width: 25%;
   height: 4.5rem;
-  background-color: ${THEME.MOBILE_HEADER};
+  background-color: ${THEME.THEME_ORANGE};
 
   font-size: 1.5rem;
   color: ${(props) => (props.active ? 'white' : '#FFB27A')};
@@ -198,7 +198,7 @@ export const DesktopCategoryButton = styled.div<ActiveProps>`
   cursor: pointer;
 
   /**이건 임시로.. 이렇게 하면 안됨 애니메이션 넣는게 맞음. */
-  border-bottom: ${(props) => (props.active ? `3px solid ${THEME.MOBILE_HEADER}` : '3px solid white')};
+  border-bottom: ${(props) => (props.active ? `3px solid ${THEME.THEME_ORANGE}` : '3px solid white')};
 `;
 
 export const LoginButton = styled.div`

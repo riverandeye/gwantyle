@@ -9,6 +9,7 @@ export const Layout = styled.div`
 
 export const LayoutContainer = styled.div`
   padding-top: 10rem;
+  width: 100%;
 
   @media only screen and (min-width: ${BREAKPOINT}px) {
     padding-top: 6rem;
