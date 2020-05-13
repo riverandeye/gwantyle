@@ -22,19 +22,26 @@ export const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 117.4rem;
+  max-width: 118rem;
 `;
 
 export const FilterContainer = styled.div`
+  position: fixed;
+  z-index: 10;
+  top: 0;
+
   width: 100%;
+  max-width: 118rem;
   align-self: start;
   justify-self: start;
 
   display: flex;
   flex-direction: column;
 
+  padding-top: 10rem;
   @media only screen and (min-width: ${BREAKPOINT}px) {
-    margin-top: 4rem;
+    padding-top: 10rem;
+    background-color: ${THEME.MAIN_BACKGROUND};
   }
 `;
 
@@ -47,7 +54,7 @@ export const FilterColumnContainer = styled.div`
   border-bottom: 1px solid ${THEME.SOFT_BORDER};
   background-color: white;
   @media only screen and (min-width: ${BREAKPOINT}px) {
-    background-color: inherit;
+    background-color: ${THEME.MAIN_BACKGROUND};
   }
 `;
 
@@ -213,4 +220,28 @@ export const DesktopAgesButton = styled.div<ActiveProps>`
   background-color: ${(props) => (props.active ? 'white' : 'inherit')};
   color: ${(props) => (props.active ? THEME.THEME_ORANGE : 'gray')};
   font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
+`;
+
+export const CardWrapper = styled.div`
+  margin-top: 7rem;
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  @media only screen and (min-width: ${BREAKPOINT}px) {
+    margin-top: 16rem;
+  }
+`;
+
+export const CardContainer = styled.div`
+  width: 32%;
+  margin: 0.5%;
+
+  @media only screen and (min-width: ${BREAKPOINT}px) {
+    width: auto;
+    margin: 0.3rem;
+  }
 `;

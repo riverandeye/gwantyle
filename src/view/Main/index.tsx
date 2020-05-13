@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import * as S from './styles';
+import Card from '../../component/card';
 import ArrowDown from '../../svgs/arrow-down';
 import FilterIcon from '../../svgs/filter-icon';
 import { SearchLens } from '../../svgs/search-lens';
@@ -60,6 +61,41 @@ const Main: React.FC<MainProps> = () => {
             </S.DesktopAgesContainer>
           </S.DesktopColumnContainer>
         </S.FilterContainer>
+        <S.CardWrapper>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+          <S.CardContainer>
+            <Card />
+          </S.CardContainer>
+        </S.CardWrapper>
       </S.MainContainer>
     </S.Main>
   );

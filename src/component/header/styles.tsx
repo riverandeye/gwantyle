@@ -7,6 +7,7 @@ interface ActiveProps {
 }
 
 export const Header = styled.div`
+  z-index: 20;
   position: fixed;
   width: 100%;
 `;
