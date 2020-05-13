@@ -57,9 +57,9 @@ const Header: React.FC<HeaderProps> = () => {
             </S.DesktopGenderContainer>
           </S.DesktopHeaderLeft>
           <S.DesktopCategoryContainer>
-            {CATEGORIES.map((val, idx) => (
+            {CATEGORIES.map((name, idx) => (
               <S.DesktopCategoryButton active={categoryState === idx} onClick={() => toggleCategory(idx)}>
-                {val}
+                {name}
               </S.DesktopCategoryButton>
             ))}
           </S.DesktopCategoryContainer>

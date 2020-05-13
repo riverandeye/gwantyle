@@ -44,10 +44,27 @@ export const FilterColumnContainer = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  border-bottom: 1px solid #f0f3f5;
+  border-bottom: 1px solid ${THEME.SOFT_BORDER};
   background-color: white;
   @media only screen and (min-width: ${BREAKPOINT}px) {
     background-color: inherit;
+  }
+`;
+
+export const DesktopColumnContainer = styled(FilterColumnContainer)`
+  display: none;
+  padding: 2rem 0rem;
+  @media only screen and (min-width: ${BREAKPOINT}px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+export const MobileColumnContainer = styled(FilterColumnContainer)`
+  display: flex;
+  @media only screen and (min-width: ${BREAKPOINT}px) {
+    display: none;
   }
 `;
 
@@ -64,11 +81,14 @@ export const FilterCategoryButton = styled.div<ActiveProps>`
   background-color: white;
 
   color: ${(props) => (props.active ? 'black' : 'gray')};
-  border-bottom: ${(props) => (props.active ? '1px solid #ff6b00' : '1px solid #f0f3f5')};
+  border-bottom: ${(props) => (props.active ? `1px solid ${THEME.THEME_ORANGE}` : `1px solid ${THEME.SOFT_BORDER}`)};
   height: 3.6rem;
 
   @media only screen and (min-width: ${BREAKPOINT}px) {
     height: 4.4rem;
+    background-color: ${(props) => (props.active ? 'white' : 'inherit')};
+    color: ${(props) => (props.active ? THEME.THEME_ORANGE : 'gray')};
+    border: 1px solid ${THEME.DARK_BORDER};
   }
 `;
 
@@ -99,7 +119,7 @@ export const FilterButton = styled.div`
   height: 3.2rem;
   padding: 1.2rem;
 
-  border-left: 1px solid #f0f3f5;
+  border-left: 1px solid ${THEME.SOFT_BORDER};
 `;
 
 export const FilterButtonText = styled.div`
@@ -109,4 +129,88 @@ export const FilterButtonText = styled.div`
   margin-left: 0.5rem;
 
   font-size: 1.2rem;
+`;
+
+export const DesktopCategoryButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 21.3rem;
+
+  border: 1px solid ${THEME.DARK_BORDER};
+`;
+
+export const DesktopSearchBar = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 14rem;
+  height: 3.2rem;
+  justify-self: center;
+
+  border: 1px solid ${THEME.DARK_BORDER};
+  background-color: #ebeef0;
+  overflow: hidden;
+
+  svg {
+    fill: #a9aaab;
+  }
+
+  svg,
+  div {
+    position: absolute;
+  }
+
+  input {
+    z-index: 2;
+    height: 3.2rem;
+    width: 14rem;
+    margin-left: 0.3rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    padding: 0.3rem;
+  }
+
+  &:focus-within {
+    background-color: ${THEME.THEME_ORANGE};
+
+    svg,
+    div {
+      display: none;
+    }
+
+    input {
+      color: white;
+    }
+  }
+`;
+
+export const SearchBarText = styled.div`
+  font-size: 1.1rem;
+  color: #a9aaab;
+  margin-left: 3rem;
+`;
+
+export const DesktopAgesContainer = styled.div`
+  display: flex;
+  padding-left: 3.3rem;
+`;
+
+export const DesktopAgesButton = styled.div<ActiveProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4.5rem;
+  height: 3.4rem;
+
+  font-size: 1.1rem;
+  border: 1px solid ${THEME.DARK_BORDER};
+
+  background-color: ${(props) => (props.active ? 'white' : 'inherit')};
+  color: ${(props) => (props.active ? THEME.THEME_ORANGE : 'gray')};
+  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
 `;

@@ -186,7 +186,7 @@ export const DesktopCategoryButton = styled.div<ActiveProps>`
   display: flex;
   justify-content: center;
 
-  width: 5.84rem;
+  width: 5rem;
   line-height: 6rem;
   height: 6rem;
   font-size: 1.5rem;
