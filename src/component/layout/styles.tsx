@@ -1,10 +1,14 @@
-import styled from "styled-components/macro";
-import { BREAKPOINT } from "../../constant";
+import styled from 'styled-components/macro';
+import { BREAKPOINT } from '../../constant';
 
-export const Layout = styled.div``;
+export const Layout = styled.div`
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+`;
 
 export const LayoutContainer = styled.div`
-  padding-top: 16.5rem;
+  padding-top: 17rem;
 
   @media only screen and (min-width: ${BREAKPOINT}px) {
     padding-top: 22rem;
