@@ -8,9 +8,9 @@ export const Layout = styled.div`
 `;
 
 export const LayoutContainer = styled.div`
-  padding-top: 17rem;
+  padding-top: 10rem;
 
   @media only screen and (min-width: ${BREAKPOINT}px) {
-    padding-top: 22rem;
+    padding-top: 6rem;
   }
 `;

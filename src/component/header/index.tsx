@@ -39,13 +39,37 @@ const Header: React.FC<HeaderProps> = ({}) => {
         </S.MobileContainer>
         <S.SecondRowContainer>
           {CATEGORIES.map((val, idx) => (
-            <S.CategoryButton active={categoryState === idx} onClick={() => toggleCategory(idx)}>
+            <S.MobileCategoryButton active={categoryState === idx} onClick={() => toggleCategory(idx)}>
               {val}
-            </S.CategoryButton>
+            </S.MobileCategoryButton>
           ))}
         </S.SecondRowContainer>
         <S.DesktopContainer>
-          <S.Logo src={process.env.PUBLIC_URL + '/logo.png'} />
+          <S.DesktopHeaderLeft>
+            <S.Logo src={process.env.PUBLIC_URL + '/logo.png'} />
+            <S.DesktopGenderContainer>
+              <S.DesktopGenderButton active={genderState} onClick={() => toggleButton(true)}>
+                WOMEN
+              </S.DesktopGenderButton>
+              <S.DesktopGenderButton active={!genderState} onClick={() => toggleButton(false)}>
+                MEN
+              </S.DesktopGenderButton>
+            </S.DesktopGenderContainer>
+          </S.DesktopHeaderLeft>
+          <S.DesktopCategoryContainer>
+            {CATEGORIES.map((val, idx) => (
+              <S.DesktopCategoryButton active={categoryState === idx} onClick={() => toggleCategory(idx)}>
+                {val}
+              </S.DesktopCategoryButton>
+            ))}
+          </S.DesktopCategoryContainer>
+          <S.DesktopHeaderRight>
+            <S.LoginButton>로그인</S.LoginButton>
+            <S.DesktopSearchBar>
+              <SearchLens />
+              <S.DesktopSearchBarMessage>검색어를 입력하세요</S.DesktopSearchBarMessage>
+            </S.DesktopSearchBar>
+          </S.DesktopHeaderRight>
         </S.DesktopContainer>
       </S.HeaderContainer>
     </S.Header>

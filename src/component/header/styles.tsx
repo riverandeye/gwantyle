@@ -2,6 +2,10 @@ import styled from 'styled-components/macro';
 
 import { BREAKPOINT, THEME } from '../../constant';
 
+interface ActiveProps {
+  active?: boolean;
+}
+
 export const Header = styled.div`
   position: fixed;
   width: 100%;
@@ -36,9 +40,13 @@ export const MobileContainer = styled.div`
 `;
 
 export const DesktopContainer = styled.div`
+  width: 100%;
+
   display: none;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+
   @media only screen and (min-width: ${BREAKPOINT}px) {
     display: flex;
   }
@@ -47,6 +55,7 @@ export const DesktopContainer = styled.div`
 export const Logo = styled.img`
   width: 5.5rem;
   height: auto;
+  cursor: pointer;
 
   @media only screen and (min-width: ${BREAKPOINT}px) {
     width: 6rem;
@@ -88,11 +97,7 @@ export const MobileGenderToggle = styled.div`
   border-radius: 1.5rem;
 `;
 
-interface CategoryButtonContainer {
-  active?: boolean;
-}
-
-export const MobileGenderButton = styled.div<CategoryButtonContainer>`
+export const MobileGenderButton = styled.div<ActiveProps>`
   z-index: ${(props) => (props.active ? 100 : 50)};
 
   display: flex;
@@ -112,10 +117,6 @@ export const MobileGenderButton = styled.div<CategoryButtonContainer>`
   color: ${(props) => (props.active ? THEME.MOBILE_HEADER : 'white')};
 `;
 
-interface CategoryButtonContainer {
-  active?: boolean;
-}
-
 export const SecondRowContainer = styled.div`
   width: 100%;
   display: flex;
@@ -125,7 +126,7 @@ export const SecondRowContainer = styled.div`
   }
 `;
 
-export const CategoryButton = styled.div<CategoryButtonContainer>`
+export const MobileCategoryButton = styled.div<ActiveProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,5 +139,92 @@ export const CategoryButton = styled.div<CategoryButtonContainer>`
   font-size: 1.5rem;
   color: ${(props) => (props.active ? 'white' : '#FFB27A')};
 
-  font-weight: ${(props) => (props.active ? 500 : 200)};
+  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
+`;
+
+export const DesktopHeaderLeft = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+export const DesktopHeaderRight = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+export const DesktopCategoryContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DesktopGenderContainer = styled.div`
+  display: flex;
+  margin-left: 2.3rem;
+`;
+
+export const DesktopGenderButton = styled.div<ActiveProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  padding: 0rem 0.5rem;
+
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  color: ${(props) => (props.active ? 'black' : 'gray')};
+  font-weight: bold;
+`;
+
+export const DesktopCategoryButton = styled.div<ActiveProps>`
+  display: flex;
+  justify-content: center;
+
+  width: 5.84rem;
+  line-height: 6rem;
+  height: 6rem;
+  font-size: 1.5rem;
+
+  color: ${(props) => (props.active ? 'black' : 'gray')};
+  font-weight: bold;
+
+  margin: 0rem 2rem;
+  cursor: pointer;
+
+  /**이건 임시로.. 이렇게 하면 안됨 애니메이션 넣는게 맞음. */
+  border-bottom: ${(props) => (props.active ? `3px solid ${THEME.MOBILE_HEADER}` : '3px solid white')};
+`;
+
+export const LoginButton = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 3.3rem;
+  height: 6rem;
+
+  font-size: 1.1rem;
+  margin-right: 2rem;
+`;
+
+export const DesktopSearchBar = styled.div`
+  width: 18rem;
+  height: 6rem;
+  padding: 0rem 1rem 0rem 1.4rem;
+
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #edeff0;
+`;
+
+export const DesktopSearchBarMessage = styled.div`
+  margin-left: 0.7rem;
+  font-size: 1.2rem;
+
+  color: gray;
 `;
