@@ -1,12 +1,15 @@
 import React from 'react';
-import Layout from './component/layout';
 import Main from './view/Main';
+
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Drag from './view/Drag';
 
 function App() {
   return (
-    <Layout>
-      <Main />
-    </Layout>
+    <Router>
+      <Route path="/gwantyle/drag" exact component={Drag} />
+      <Route path="/gwantyle" exact component={Main} />
+    </Router>
   );
 }
 
